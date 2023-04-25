@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 
-# class costomer_login(models.Model):
-# 	def __str__(self):
-# 		return (str([self.username, self.password]))
-# 	username = models.CharField(max_length=100)
-# 	password = models.CharField(max_length=100)
+class client_login(models.Model):
+	def __str__(self):
+		return (str([self.username, self.password]))
+	username = models.CharField(max_length=100)
+	password = models.CharField(max_length=100)
 
 class rooms_booked(models.Model):
 	def __str__(self):
@@ -18,15 +18,15 @@ class rooms_booked(models.Model):
 	is_booked = models.BooleanField()
 	user_booked = models.CharField(max_length=100)
 	owner = models.CharField(max_length=50)
-	hotel = models.CharField(max_length=50)
+	guesthouse = models.CharField(max_length=50)
 	price = models.IntegerField()
 
 
-# class manager_login(models.Model):
-# 	def __str__(self):
-# 		return (str([self.username, self.password]))
-# 	username = models.CharField(max_length=100)
-# 	password = models.CharField(max_length=100)
+class admin_login(models.Model):
+	def __str__(self):
+		return (str([self.username, self.password]))
+	username = models.CharField(max_length=100)
+	password = models.CharField(max_length=100)
 
 class rooms_added(models.Model):
 	def __str__(self):
