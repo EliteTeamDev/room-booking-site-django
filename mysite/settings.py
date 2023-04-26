@@ -23,15 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=!95l&(eqg%f)d+bq-ftczusgiyec7&rm#t70g*%72%p8!*8ku'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'room.apps.RoomConfig',
+    'room',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -107,6 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+STATICFILES_DIRS = [BASE_DIR/'static',]
+STATIC_ROOT = BASE_DIR/'staticfiles'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -130,4 +133,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/static/',
+
+
 ]

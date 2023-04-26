@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 
-# class costomer_login(models.Model):
-# 	def __str__(self):
-# 		return (str([self.username, self.password]))
-# 	username = models.CharField(max_length=100)
-# 	password = models.CharField(max_length=100)
+class client_login(models.Model):
+	def __str__(self):
+		return (str([self.username, self.password]))
+	username = models.CharField(max_length=100)
+	password = models.CharField(max_length=100)
 
 class rooms_booked(models.Model):
 	def __str__(self):
@@ -17,22 +17,22 @@ class rooms_booked(models.Model):
 	end = models.DateField()
 	is_booked = models.BooleanField()
 	user_booked = models.CharField(max_length=100)
-	owner = models.CharField(max_length=50)
+	owner = models.IntegerField(max_length=50)
 	hotel = models.CharField(max_length=50)
 	price = models.IntegerField()
 
 
-# class manager_login(models.Model):
-# 	def __str__(self):
-# 		return (str([self.username, self.password]))
-# 	username = models.CharField(max_length=100)
-# 	password = models.CharField(max_length=100)
+class admin_login(models.Model):
+	def __str__(self):
+		return (str([self.username, self.password]))
+	username = models.CharField(max_length=100)
+	password = models.CharField(max_length=100)
 
 class rooms_added(models.Model):
 	def __str__(self):
 		return (str([self.owner, self.start_room, self.end_room, self.start,
 				self.end, self.price]))
-	owner = models.CharField(max_length=50)
+	owner = models.IntegerField(max_length=50)
 	start_room = models.IntegerField()
 	end_room = models.IntegerField()
 	start = models.DateField()
@@ -58,7 +58,7 @@ class hotels(models.Model):
 				self.picture, self.address, self.Type,
 				self.price, self.discription]))
 	name = models.CharField(max_length=50)
-	owner = models.CharField(max_length=50)
+	owner = models.IntegerField(max_length=50)
 	rooms = models.IntegerField()
 	picture = models.FileField()
 	address = models.CharField(max_length=500)
