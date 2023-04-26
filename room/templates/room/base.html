@@ -107,9 +107,9 @@
                         </button>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'login' %}">Customer Login</a>
+                            <a class="dropdown-item" href="{% url 'login' %}">Client Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'rmlogin' %}">Manager Login</a>
+                            <a class="dropdown-item" href="{% url 'rmlogin' %}">Admin Login</a>
                         </div>
                     </li>
             
@@ -121,9 +121,9 @@
                         </button>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'signup' %}">Customer Signup</a>
+                            <a class="dropdown-item" href="{% url 'signup' %}">Client Signup</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'rmsignup' %}">Manager Signup</a>
+                            {% comment %} <a class="dropdown-item" href="{% url 'rmsignup' %}">Admin Signup</a> {% endcomment %}
                         </div>
                     </li>
                 {% endif %}
